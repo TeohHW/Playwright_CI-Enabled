@@ -62,7 +62,7 @@ test("Switch to new tab", async ({ page }) => {
   await locators.openTabLink.click();
   const newTab = await newTabPromise;
 
-  await newTab.waitForLoadState('domcontentloaded');
+  await newTab.waitForLoadState("domcontentloaded");
   console.log("New tab URL:", newTab.url());
 
   // Check URL instead of page content since site may redirect on CI
@@ -76,7 +76,7 @@ test("Switch to new window", async ({ page }) => {
   await locators.openWindowButton.click();
   const newWindow = await newWindowPromise;
 
-  await newWindow.waitForLoadState('domcontentloaded');
+  await newWindow.waitForLoadState("domcontentloaded");
   console.log("New window URL:", newWindow.url());
 
   // Check URL instead of page content
