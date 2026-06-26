@@ -1,41 +1,141 @@
-# 🎭 Playwright Examples
+# Playwright Test Automation Practice
 
-This repo is used to demonstrate various testing scenarios with [Playwright](https://playwright.dev/) 🎭 with Node.js.
+This repository showcases my knowledge of Playwright test automation using TypeScript and Node.js.
 
-## Run Playwright example tests
+It contains a collection of personal practice tests covering different Playwright scenarios, including UI automation, API validation, reusable locators, and test data handling.
 
-### Install dependencies
+## What This Repo Demonstrates
 
-Start by cloning the repo and installing the dependencies:
+The test suite covers a range of Playwright testing concepts, including:
+
+- UI interaction tests for forms, dropdowns, checkboxes, radio buttons, sliders, alerts, iFrames, tabs, and new windows
+- E-commerce style flows such as product search, filtering, sorting, comparison, cart deletion, guest checkout, and purchase flow validation
+- Contact form validation using both JSON and TypeScript test data
+- Registration and login flow coverage
+- API response validation and filtering scenarios
+- Page locator reuse through a shared locator class
+- Cross-browser execution using Chromium, Firefox, and WebKit
+- Playwright configuration for timeouts, retries, traces, and HTML reporting
+
+## Project Structure
+
+```text
+.
+|-- tests/
+|   `-- Practice/              # Active Playwright test specs
+|-- pages/                     # Shared locator class / page object style helpers
+|-- test-data/                 # JSON, TypeScript, and upload fixture test data
+|-- hars/                      # HAR files and related network assets
+|-- examples/                  # Optional reference material
+|-- playwright.config.ts       # Playwright test configuration
+|-- package.json
+`-- README.md
+```
+
+The active test directory is configured in `playwright.config.ts`:
+
+```ts
+testDir: './tests'
+```
+
+## Test Areas
+
+### Practice UI Scenarios
+
+Located in `tests/Practice/Practice.spec.ts`.
+
+These tests cover common UI automation skills such as:
+
+- Radio buttons
+- Suggestion boxes
+- Dropdowns
+- Checkboxes
+- Browser tabs and windows
+- Hide/show elements
+- Alerts and confirmations
+- Web tables
+- Mouse hover interactions
+- iFrames
+
+### Additional Practice Scenarios
+
+Located in `tests/Practice/PracticeB.spec.ts`.
+
+These tests cover:
+
+- Registration page validation
+- Slow loading page handling
+- JavaScript alerts
+
+### Shopping And E-Commerce Scenarios
+
+Located in `tests/Practice/ShoppingPage.spec.ts`.
+
+These tests cover more complete user journeys, including:
+
+- Product selection
+- Search
+- Price slider interaction
+- Checkbox filters
+- Pagination
+- Sorting
+- Category navigation
+- Contact form validation
+- File upload
+- Product comparison
+- User registration
+- Cart item deletion
+- Guest checkout and payment flow
+
+### API Scenarios
+
+Located in `tests/Practice/API Test.spec.ts`.
+
+These tests cover API-style validation such as:
+
+- Listing resources
+- Reading a specific resource
+- Filtering resources
+- Validating nested resource responses
+
+## Getting Started
+
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Use the [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright) to run the tests in the tests folder from VS Code or run the following command in the terminal:
+Install Playwright browsers if needed:
+
+```bash
+npx playwright install
+```
+
+List available tests:
+
+```bash
+npx playwright test --list
+```
+
+Run the full test suite:
+
+```bash
+npx playwright test
+```
+
+Run tests in the Playwright UI:
 
 ```bash
 npx playwright test --ui
 ```
 
-## Contributing
+Open the HTML report after a run:
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+```bash
+npx playwright show-report
+```
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+## Notes
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-## Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
-trademarks or logos is subject to and must follow 
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+This project is focused on practicing Playwright automation rather than testing a single owned application. The tests intentionally cover different websites and interaction patterns to build experience across UI automation, API validation, reusable locators, test data handling, and Playwright configuration.

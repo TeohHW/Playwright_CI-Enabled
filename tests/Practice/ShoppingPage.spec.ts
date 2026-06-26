@@ -1,7 +1,7 @@
 import { test as base, expect, type Page } from "@playwright/test";
-import { PracticeLocators } from "../../Pages/locators";
-import testDataJson from "../../TestData/SearchFilters.json";
-import { loginCredentials } from "../../TestData/SearchFilters";
+import { PracticeLocators } from "../../pages/locators";
+import testDataJson from "../../test-data/SearchFilters.json";
+import { loginCredentials } from "../../test-data/SearchFilters";
 declare const process: any;
 const test = base.extend<{ locators: PracticeLocators }>({
   locators: async ({ page }, use) => {
@@ -204,7 +204,7 @@ test("Contact Form - JSON", async ({ page, locators }) => {
   await locators.messageInput.fill(testDataJson.user1.message);
   await expect(locators.messageInput).toHaveValue(testDataJson.user1.message);
 
-  await locators.fileInput.setInputFiles("tests/UploadFileTest.txt");
+  await locators.fileInput.setInputFiles("test-data/UploadFileTest.txt");
   await locators.contactSubmitButton.click();
 
   await expect(page.getByRole("alert")).toContainText(
@@ -238,7 +238,7 @@ test("Contact Form - TypeScript", async ({ page, locators }) => {
     loginCredentials.user1.message,
   );
 
-  await locators.fileInput.setInputFiles("tests/UploadFileTest.txt");
+  await locators.fileInput.setInputFiles("test-data/UploadFileTest.txt");
   await locators.contactSubmitButton.click();
 
   await expect(page.getByRole("alert")).toContainText(

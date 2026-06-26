@@ -1,5 +1,5 @@
 import { test as base, expect, type Page } from "@playwright/test";
-import { PracticeLocators } from "../../Pages/locators";
+import { PracticeLocators } from "../../pages/locators";
 
 const test = base.extend<{ locators: PracticeLocators }>({
   locators: async ({ page }, use) => {

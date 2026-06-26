@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { PracticeLocators } from "../../Pages/locators";
+import { PracticeLocators } from "../../pages/locators";
 
 test.beforeEach(async ({ page }) => {
   await page.goto("https://rahulshettyacademy.com/AutomationPractice/");
