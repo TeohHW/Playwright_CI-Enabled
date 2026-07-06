@@ -2,8 +2,9 @@
 
 This repository showcases my knowledge of Playwright test automation using TypeScript and Node.js.
 
-It contains a collection of personal practice tests covering different Playwright scenarios, including UI automation, API validation, reusable locators, and test data handling.
+It contains a collection of personal practice tests covering different Playwright scenarios, including UI automation, API validation, reusable locators, and test data handling. 
 
+Tests are done on a publicly available e-commerce demo site built for automation practice.
 ## What This Repo Demonstrates
 
 The test suite covers a range of Playwright testing concepts, including:
